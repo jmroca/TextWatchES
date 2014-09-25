@@ -1,0 +1,44 @@
+{
+    "appKeys": {
+        "color": 0,
+        "date": 1
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "Jose De La Roca",
+    "longName": "TextWatch ES",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "fonts/Cicle-Gordita-Italic.ttf",
+                "name": "FONT_GORDITA_26",
+                "type": "font"
+            },
+            {
+                "file": "fonts/Cicle-Fina.ttf",
+                "name": "FONT_THIN_38",
+                "type": "font"
+            },
+            {
+                "file": "fonts/Cicle-Fina.ttf",
+                "name": "FONT_THIN_41",
+                "type": "font"
+            },
+            {
+                "file": "images/menu_icon_spanish_text_watch.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
+            }
+        ]
+    },
+    "shortName": "TextWatch ES",
+    "uuid": "a508a6d8-626b-457b-a69c-d2cbd1863983",
+    "versionCode": 2,
+    "versionLabel": "2.1",
+    "watchapp": {
+        "watchface": true
+    }
+}
