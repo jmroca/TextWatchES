@@ -12,16 +12,19 @@
     "resources": {
         "media": [
             {
+                "compatibility": "2.7",
                 "file": "fonts/Cicle-Gordita-Italic.ttf",
                 "name": "FONT_GORDITA_26",
                 "type": "font"
             },
             {
+                "compatibility": "2.7",
                 "file": "fonts/Cicle-Fina.ttf",
                 "name": "FONT_THIN_38",
                 "type": "font"
             },
             {
+                "compatibility": "2.7",
                 "file": "fonts/Cicle-Fina.ttf",
                 "name": "FONT_THIN_41",
                 "type": "font"

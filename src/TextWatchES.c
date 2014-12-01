@@ -65,7 +65,9 @@ void animationStoppedHandler(struct Animation *animation, bool finished, void *c
 // Animate line
 void makeAnimationsForLayers(Line *line, TextLayer *current, TextLayer *next)
 {
-	GRect rect = layer_get_frame(text_layer_get_layer(next));
+  //APP_LOG(APP_LOG_LEVEL_DEBUG, "Current: %s  Next:%s", text_layer_get_text(current),text_layer_get_text(next));
+	
+  GRect rect = layer_get_frame(text_layer_get_layer(next));
 	rect.origin.x -= 144;
 	
 	line->nextAnimation = property_animation_create_layer_frame(text_layer_get_layer(next), NULL, &rect);
@@ -153,14 +155,15 @@ void dateToText(struct tm *t)
 		
 	// fecha y mes
 	strftime(temp2, sizeof(temp2), "%d.%m", t);
-
-	APP_LOG(APP_LOG_LEVEL_DEBUG, "Temp: %s", temp2);
+	
+  //APP_LOG(APP_LOG_LEVEL_DEBUG, "Temp: %s", temp2);
 
 	/*if (temp2[0] == '0') {
 		memmove(&temp2[0], &temp2[1], 4);
 		temp2[4] = 0;
 	}
-*/
+  */
+  
 	// finalmente armar string
 	memmove(&temp_date[0],&weekday[0],3);
 	memmove(&temp_date[3],&temp2[0],strlen(temp2));
@@ -215,6 +218,7 @@ void display_time(struct tm *t)
 		updateLineTo(&line3, line3Str, textLine3);	
 	}
 
+  /*
 	// generar texto de fecha
 	dateToText(t);
 		
@@ -225,7 +229,7 @@ void display_time(struct tm *t)
 	}
 	else
 		APP_LOG(APP_LOG_LEVEL_DEBUG, "Misma Fecha: %s", date_text);
-	
+	*/
 }
 
 // Update screen without animation first time we start the watchface
@@ -378,7 +382,7 @@ void out_sent_handler(DictionaryIterator *sent, void *context) {
     // Act on the found fields received
     if (text_tuple) {
         
-        APP_LOG(APP_LOG_LEVEL_DEBUG, "Config Value: %s", text_tuple->value->cstring);
+        //APP_LOG(APP_LOG_LEVEL_DEBUG, "Config Value: %s", text_tuple->value->cstring);
 
         if(strcmp(text_tuple->value->cstring, "1") == 0)
         	setWatchFaceColor(GColorWhite);
@@ -392,7 +396,7 @@ void out_sent_handler(DictionaryIterator *sent, void *context) {
     // Act on the found fields received
     if (text_tuple) {
         
-        APP_LOG(APP_LOG_LEVEL_DEBUG, "Config Value: %s", text_tuple->value->cstring);
+        //APP_LOG(APP_LOG_LEVEL_DEBUG, "Config Value: %s", text_tuple->value->cstring);
 
         if(strcmp(text_tuple->value->cstring, "1") == 0)
         	setShowDate(1);
@@ -543,7 +547,7 @@ int main(void) {
 
 	init();
 
-	APP_LOG(APP_LOG_LEVEL_DEBUG, "Done initializing, pushed window: %p", window);
+	//APP_LOG(APP_LOG_LEVEL_DEBUG, "Done initializing, pushed window: %p", window);
 
 	app_event_loop();
 
